@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <h2>Consultar Alumnos por Grado</h2>
+  
+  <div class="input-group mb-3">
+    <input type="number" class="form-control" [formControl]="gradoSeleccionado" placeholder="Ingresa grado">
+    <button class="btn btn-primary" (click)="consultar()">Buscar</button>
+  </div>
+
+  <table *ngIf="alumnos.length > 0" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Fecha Nac.</th>
+        <th>Padre</th>
+        <th>Madre</th>
+        <th>Sección</th>
+        <th>Ingreso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let alumno of alumnos">
+        <td>{{ alumno.nombre }}</td>
+        <td>{{ alumno.fechaNacimiento | date }}</td>
+        <td>{{ alumno.nombrePadre }}</td>
+        <td>{{ alumno.nombreMadre }}</td>
+        <td>{{ alumno.seccion }}</td>
+        <td>{{ alumno.fechaIngreso | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="alumnos.length === 0" class="alert alert-info" style="margin-top: 20px;">
+    No se encontraron alumnos para este grado.
+  </div>
+</div>

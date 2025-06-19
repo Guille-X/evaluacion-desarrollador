@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <h2>Crear Alumno</h2>
+  <form [formGroup]="alumnoForm" (ngSubmit)="enviar()">
+    <div class="mb-3">
+      <label>Nombre</label>
+      <input formControlName="nombre" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Fecha de nacimiento</label>
+      <input type="date" formControlName="fechaNacimiento" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Nombre del padre</label>
+      <input formControlName="nombrePadre" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Nombre de la madre</label>
+      <input formControlName="nombreMadre" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Grado</label>
+      <input type="number" formControlName="grado" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Sección</label>
+      <input formControlName="seccion" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Fecha de ingreso</label>
+      <input type="date" formControlName="fechaIngreso" class="form-control">
+    </div>
+    <button class="btn btn-primary" type="submit">Guardar</button>
+  </form>
+
+  <div *ngIf="mensaje" class="alert alert-info mt-3">
+    {{ mensaje }}
+  </div>
+</div>
