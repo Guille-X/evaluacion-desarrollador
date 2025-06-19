@@ -1,3 +1,8 @@
+**Nota:** El proyecto completo se encuentra en la rama `feature/GuillermoMartin`.  
+Puedes cambiarte a esta rama con:
+
+git checkout feature/GuillermoMartin
+
 # Sistema de Registro de Alumnos 
 
 Este proyecto incluye:
